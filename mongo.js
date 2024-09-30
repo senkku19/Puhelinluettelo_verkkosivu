@@ -10,16 +10,11 @@ if (
   
 const { 2: password, 3: name, 4: number } = process.argv
 
-const url = `mongodb+srv://user:${password}@cluster0.h8xat.mongodb.net/?retryWrites=true&w=majority`
-
-console.log(url)
-
+const url = `mongodb+srv://user:${password}@cluster0.h8xat.mongodb.net/phonebook?retryWrites=true&w=majority`
 
 mongoose.set('strictQuery', false)
 mongoose.connect(url)
   .then(() => {
-    console.log('Connected to MongoDB');
-
     const personSchema = new mongoose.Schema({
         name: String,
         number: String,
