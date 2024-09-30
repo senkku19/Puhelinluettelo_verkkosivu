@@ -87,13 +87,13 @@ app.post('/api/persons', morganPost, (request, response) => {
         })
     } 
 
-    const nameFound = persons.find(person => person.name === body.name)
+    /*const nameFound = persons.find(person => person.name === body.name)
 
     if (nameFound){
         return response.status(400).json({
             error: 'name is already in the phonebook'
         })
-    }
+    }*/
 
     const person = new Person({
         name: body.name,
